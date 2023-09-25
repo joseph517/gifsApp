@@ -16,10 +16,22 @@ export class GifsService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.loadLocalStorage()
+   }
 
   get tagHistory(){
     return [...this._tagHistory]
+  }
+
+  private saveLocalStorage():void{
+    localStorage.setItem('history', JSON.stringify(this._tagHistory ))
+  }
+
+  private loadLocalStorage():void{
+    if(!localStorage.getItem('history')) return
+     this._tagHistory = JSON.parse(localStorage.getItem('history')!);
+     this.searchTag(this._tagHistory[0])
   }
 
   private organizeHistory(tag:string){
@@ -31,7 +43,11 @@ export class GifsService {
     }
     this._tagHistory.unshift(tag)
     this._tagHistory = this._tagHistory.splice(0, 10)
+    this.saveLocalStorage()
+  }
 
+  getItemLocalStorage(){
+    return localStorage.getItem('history')
   }
 
   searchTag(tag:string):void{
