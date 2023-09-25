@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    restart: always
+    container_name: gift
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 4200:4200
