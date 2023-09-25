@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SearchBoxComponent } from './component/searh-box/search-box.component';
 import { CardListComponent } from './component/card-list/card-list.component';
+import { CardComponent } from './component/card/card.component';
 
 
 
@@ -10,7 +11,8 @@ import { CardListComponent } from './component/card-list/card-list.component';
   declarations: [
     HomePageComponent,
     SearchBoxComponent,
-    CardListComponent
+    CardListComponent,
+    CardComponent
   ],
   imports: [
     CommonModule
