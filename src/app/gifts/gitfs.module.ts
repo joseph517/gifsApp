@@ -4,6 +4,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SearchBoxComponent } from './component/searh-box/search-box.component';
 import { CardListComponent } from './component/card-list/card-list.component';
 import { CardComponent } from './component/card/card.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { CardComponent } from './component/card/card.component';
     CardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     HomePageComponent,
